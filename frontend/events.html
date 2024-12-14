@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventicity - Upcoming Events</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <nav class="dashboard-nav">
+        <div class="nav-logo">
+            <a href="user-dashboard.html">Eventicity</a>
+        </div>
+        <div class="nav-links">
+            <a href="user-dashboard.html" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                Events
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Calendar
+            </a>
+            <a href="user-preferences.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                Preferences
+            </a>
+        </div>
+        <div class="nav-profile">
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <i class="fas fa-user"></i>
+                    <span id="userNameNav">User</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Events Listing Section -->
+    <section class="events-listing">
+        <h1>Upcoming Events</h1>
+        <div class="events-container">
+            <!-- Events will be dynamically inserted here -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/events.js"></script>
+    <script src="js/shared.js"></script>
+
+</body>
+</html>

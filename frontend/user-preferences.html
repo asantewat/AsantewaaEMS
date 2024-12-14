@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Preferences - Eventicity</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-logo">
+            <a href="user-dashboard.html">Eventicity</a>
+        </div>
+        <div class="nav-links">
+            <a href="user-dashboard.html" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                Events
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Calendar
+            </a>
+            <a href="user-preferences.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                Preferences
+            </a>
+        </div>
+        <div class="nav-profile">
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <i class="fas fa-user"></i>
+                    <span id="userNameNav">User</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="preferences-container">
+        <h1>Event Preferences</h1>
+        <p>Select the types of events you're interested in:</p>
+        
+        <form id="preferencesForm" class="preferences-form">
+            <div class="preference-item">
+                <input type="checkbox" id="workshops" name="preferences" value="workshops">
+                <label for="workshops">
+                    <i class="fas fa-laptop-code"></i>
+                    Workshops
+                </label>
+            </div>
+
+            <div class="preference-item">
+                <input type="checkbox" id="seminars" name="preferences" value="seminars">
+                <label for="seminars">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    Seminars
+                </label>
+            </div>
+
+            <div class="preference-item">
+                <input type="checkbox" id="sports" name="preferences" value="sports">
+                <label for="sports">
+                    <i class="fas fa-running"></i>
+                    Sports
+                </label>
+            </div>
+
+            <div class="preference-item">
+                <input type="checkbox" id="club-activities" name="preferences" value="club-activities">
+                <label for="club-activities">
+                    <i class="fas fa-users"></i>
+                    Club Activities
+                </label>
+            </div>
+
+            <button type="submit" class="save-btn">Save Preferences</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+    </footer>
+    <script src="js/shared.js"></script>
+    <script src="js/preferences.js"></script>
+</body>
+</html> 

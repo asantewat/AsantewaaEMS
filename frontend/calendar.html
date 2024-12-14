@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Calendar - Eventicity</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+</head>
+<body>
+    <nav class="dashboard-nav">
+        <div class="nav-logo">
+            <a href="user-dashboard.html">Eventicity</a>
+        </div>
+        <div class="nav-links">
+            <a href="user-dashboard.html" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="events.html" class="nav-link">
+                <i class="fas fa-calendar-alt"></i>
+                Events
+            </a>
+            <a href="calendar.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Calendar
+            </a>
+            <a href="user-preferences.html" class="nav-link">
+                <i class="fas fa-cog"></i>
+                Preferences
+            </a>
+        </div>
+        <div class="nav-profile">
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <i class="fas fa-user"></i>
+                    <span id="userNameNav">User</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <div class="filter-section">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter">
+                    <option value="">All Events</option>
+                    <option value="workshops">Workshops</option>
+                    <option value="seminars">Seminars</option>
+                    <option value="sports">Sports</option>
+                    <option value="club-activities">Club Activities</option>
+                </select>
+            </div>
+            <div class="calendar-navigation">
+                <button class="previous">Previous</button>
+                <h2 class="month-year"></h2>
+                <button class="next">Next</button>
+            </div>
+        </div>
+
+        <table class="calendar">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody class="calendar-body">
+                <!-- Calendar will be generated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+</html>

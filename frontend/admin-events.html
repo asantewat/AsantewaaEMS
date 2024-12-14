@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Events - Eventicity Admin</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="admin-nav">
+        <div class="nav-logo">
+            <a href="admin-dashboard.html">Eventicity Admin</a>
+        </div>
+        <div class="nav-links">
+            <a href="admin-dashboard.html" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="admin-events.html" class="nav-link">
+                <i class="fas fa-calendar-plus"></i>
+                Manage Events
+            </a>
+        </div>
+        <div class="nav-profile">
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <i class="fas fa-user-shield"></i>
+                    <span id="adminName">Admin</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Manage Events</h1>
+        </div>
+
+        <!-- Visible Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" onclick="openTab('createEvent')">
+                <i class="fas fa-plus-circle"></i> Create Event
+            </button>
+            <button class="tab-btn" onclick="openTab('existingEvents')">
+                <i class="fas fa-calendar-alt"></i> Existing Events
+            </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="createEvent" class="tab-content active">
+            <div class="form-container">
+                <form id="createEventForm" class="event-form">
+                    <div class="form-group">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" id="eventName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDate">Date</label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventTime">Time</label>
+                        <input type="time" id="eventTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventLocation">Location</label>
+                        <input type="text" id="eventLocation" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventDescription">Description</label>
+                        <textarea id="eventDescription" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventCapacity">Capacity</label>
+                        <input type="number" id="eventCapacity" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="eventType">Type</label>
+                        <select id="eventType" required>
+                            <option value="workshops">Workshops</option>
+                            <option value="seminars">Seminars</option>
+                            <option value="sports">Sports</option>
+                            <option value="club-activities">Club Activities</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">Create Event</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="existingEvents" class="tab-content">
+            <div class="events-container">
+                <div class="events-table-container">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Event Name</th>
+                                <th>Date</th>
+                                <th>Location</th>
+                                <th>Capacity</th>
+                                <th>RSVPs</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="eventsTableBody">
+                            <!-- Events will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/admin-events.js"></script>
+</body>
+</html> 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Eventicity</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="admin-nav">
+        <div class="nav-logo">
+            <a href="admin-dashboard.html">Eventicity Admin</a>
+        </div>
+        <div class="nav-links">
+            <a href="admin-dashboard.html" class="nav-link">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="admin-events.html" class="nav-link">
+                <i class="fas fa-calendar-plus"></i>
+                Manage Events
+            </a>
+        </div>
+        <div class="nav-profile">
+            <div class="profile-dropdown">
+                <button class="profile-btn" id="profileBtn">
+                    <i class="fas fa-user-shield"></i>
+                    <span id="adminName">Admin</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h1>Admin Dashboard</h1>
+        </div>
+
+        <div class="admin-grid">
+            <div class="admin-card">
+                <h2>Event Statistics</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalEvents">0</span>
+                        <span class="stat-label">Total Events</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="activeEvents">0</span>
+                        <span class="stat-label">Active Events</span>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h2>User Statistics</h2>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalUsers">0</span>
+                        <span class="stat-label">Total Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="newUsers">0</span>
+                        <span class="stat-label">New Users (This Week)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h2>Quick Actions</h2>
+                <div class="quick-actions">
+                    <button onclick="window.location.href='admin-events.html'" class="action-btn">
+                        <i class="fas fa-plus"></i> Create New Event
+                    </button>
+                    <button onclick="logout()" class="action-btn logout">Logout</button>
+                </div>
+            </div>
+
+        </div>
+         <!-- Add RSVP Details section -->
+         <div class="rsvp-details-section">
+            <h2>RSVP Details</h2>
+            <div id="rsvpDetailsTable">
+                <!-- RSVP table will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/shared.js"></script>
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html> 
