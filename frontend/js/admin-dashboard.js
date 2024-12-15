@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadStats() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/admin/dashboard', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/admin/dashboard', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -41,7 +41,7 @@ async function loadStats() {
 async function loadRecentActivity() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/admin/activity', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/admin/activity', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -88,7 +88,7 @@ setInterval(async () => {
     const token = localStorage.getItem('token');
     if (token) {
         try {
-            const response = await fetch('http://localhost:5000/api/admin/dashboard', {
+            const response = await fetch('https://eventicity-backend.onrender.com/api/admin/dashboard', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -106,7 +106,7 @@ setInterval(async () => {
 async function loadEventStatistics() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/events/statistics', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/events/statistics', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -141,7 +141,7 @@ async function loadEventStatistics() {
 async function loadRSVPDetails() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/events/all-rsvps', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/events/all-rsvps', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -193,7 +193,7 @@ async function cancelAllRSVPs(eventId) {
     if (confirm('Are you sure you want to cancel all RSVPs for this event?')) {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}/cancel-all-rsvps`, {
+            const response = await fetch(`https://eventicity-backend.onrender.com/api/events/${eventId}/cancel-all-rsvps`, {
                 method: 'POST',
                 headers: {
                     'Authorization': `Bearer ${token}`

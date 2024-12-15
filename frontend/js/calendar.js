@@ -84,7 +84,7 @@ async function loadEvents() {
         const token = localStorage.getItem('token');
         const selectedCategory = document.getElementById('categoryFilter').value;
         
-        const response = await fetch('http://localhost:5000/api/events', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/events', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

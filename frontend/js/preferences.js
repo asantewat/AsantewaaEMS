@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load user preferences
     try {
-        const response = await fetch('http://localhost:5000/api/users/me', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/users/me', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -36,7 +36,7 @@ document.getElementById('preferencesForm').addEventListener('submit', async (e) 
     const preferences = Array.from(checkboxes).map(cb => cb.value);
 
     try {
-        const response = await fetch('http://localhost:5000/api/users/preferences', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/users/preferences', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

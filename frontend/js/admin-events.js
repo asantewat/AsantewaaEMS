@@ -40,7 +40,7 @@ function openTab(tabName) {
 async function loadEvents() {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:5000/api/events', {
+        const response = await fetch('https://eventicity-backend.onrender.com/api/events', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -99,7 +99,7 @@ if (createEventForm) {
                 type: document.getElementById('eventType')?.value
             };
 
-            const response = await fetch('http://localhost:5000/api/events', {
+            const response = await fetch('https://eventicity-backend.onrender.com/api/events', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -127,7 +127,7 @@ async function deleteEvent(eventId) {
     if (confirm('Are you sure you want to delete this event?')) {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch(`http://localhost:5000/api/events/${eventId}`, {
+            const response = await fetch(`https://eventicity-backend.onrender.com/api/events/${eventId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `Bearer ${token}`

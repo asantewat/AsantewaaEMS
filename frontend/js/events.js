@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        const response = await fetch('http://localhost:5000/api/events');
+        const response = await fetch('https://eventicity-backend.onrender.com/api/events');
         if (response.ok) {
             const events = await response.json();
             displayEvents(events);
@@ -60,7 +60,7 @@ async function rsvpToEvent(eventId) {
             return;
         }
 
-        const response = await fetch(`http://localhost:5000/api/events/${eventId}/rsvp`, {
+        const response = await fetch(`https://eventicity-backend.onrender.com/api/events/${eventId}/rsvp`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`
