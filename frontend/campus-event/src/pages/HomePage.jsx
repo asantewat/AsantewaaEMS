@@ -99,7 +99,7 @@ const HomePage = () => {
       <div className="hero-section">
         <div className="hero-content">
           <h1>Camara</h1>
-          <p>Discover, Join, and Experience Amazing Campus Events</p>
+          <p>Track your events and RSVP! Admin can create events and manage RSVPs.</p>
           <div className="cta-buttons">
             <Link to="/events" className="btn primary">View Events</Link>
             {!user && <Link to="/register" className="btn secondary">Sign Up Now</Link>}
