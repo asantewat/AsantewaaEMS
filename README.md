@@ -59,8 +59,6 @@ CamaraEvents is a comprehensive event management system designed for Camara Educ
 
 ### Admin Endpoints
 - POST `/api/admin/create` - Create admin user
-- GET `/api/admin/dashboard` - Get dashboard statistics
-- GET `/api/admin/activity` - Get recent activity
 
 ## API Testing Screenshots
 
