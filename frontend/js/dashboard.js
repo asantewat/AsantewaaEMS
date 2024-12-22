@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // Fetch user data
-        const response = await fetch('https://eventicity-backend.onrender.com/api/users/me', {
+        const response = await fetch(`${API_BASE_URL}/users/me`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
 
             // Load and display user's RSVPed events
-            const eventsResponse = await fetch('https://eventicity-backend.onrender.com/api/events/my-events', {
+            const eventsResponse = await fetch(`${API_BASE_URL}/events/my-events`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -99,7 +99,7 @@ function logout() {
 async function cancelRSVP(eventId) {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://eventicity-backend.onrender.com/api/events/${eventId}/cancel-rsvp`, {
+        const response = await fetch(`${API_BASE_URL}/events/${eventId}/cancel-rsvp`, {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`

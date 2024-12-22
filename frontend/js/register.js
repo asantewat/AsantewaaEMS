@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             try {
-                const response = await fetch('https://eventicity-backend.onrender.com/api/users/register', {  // Updated URL
+                const response = await fetch(`${API_BASE_URL}/users/register`, {  // Updated URL
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

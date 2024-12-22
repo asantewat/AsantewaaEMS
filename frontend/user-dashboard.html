@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard - Eventicity</title>
+    <title>Dashboard - CamaraEvents</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dashboard.css">
@@ -11,12 +11,12 @@
 <body>
     <nav class="dashboard-nav">
         <div class="nav-logo">
-            <a href="user-dashboard.html">Eventicity</a>
+            <a href="user-dashboard.html">CamaraEvents</a>
         </div>
         <div class="nav-links">
-            <a href="user-dashboard.html" class="nav-link">
-                <i class="fas fa-tachometer-alt"></i>
-                Dashboard
+            <a href="user-dashboard.html" class="nav-link active">
+                <i class="fas fa-home"></i>
+                Home
             </a>
             <a href="events.html" class="nav-link">
                 <i class="fas fa-calendar-alt"></i>
@@ -28,17 +28,22 @@
             </a>
             <a href="user-preferences.html" class="nav-link">
                 <i class="fas fa-cog"></i>
-                Preferences
+                Settings
             </a>
         </div>
         <div class="nav-profile">
             <div class="profile-dropdown">
                 <button class="profile-btn" id="profileBtn">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user-circle"></i>
                     <span id="userNameNav">User</span>
                 </button>
                 <div class="dropdown-content">
-                    <a href="#" onclick="logout()">Logout</a>
+                    <a href="user-preferences.html">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                    <a href="#" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
                 </div>
             </div>
         </div>
@@ -46,41 +51,63 @@
 
     <div class="dashboard-container">
         <div class="dashboard-header">
-            <h1>Welcome, <span id="userName">User</span>!</h1>
+            <h1>Welcome back, <span id="userName">User</span>!</h1>
+            <p class="dashboard-subtitle">Here's what's happening with your events</p>
         </div>
 
-        <div class="dashboard-grid">
-
-            <div class="dashboard-card">
-                <h2>My Preferences</h2>
-                <div id="userPreferences" class="preferences-list">
-                    <!-- Preferences will be loaded here -->
+        <div class="dashboard-content">
+            <div class="dashboard-main">
+                <!-- RSVPed Events Section -->
+                <div class="dashboard-card rsvped-events">
+                    <div class="card-header">
+                        <h2><i class="fas fa-ticket-alt"></i> My RSVPed Events</h2>
+                    </div>
+                    <div id="rsvpedEventsTable" class="card-content">
+                        <!-- Table will be loaded here -->
+                    </div>
                 </div>
             </div>
 
-
-            <div class="dashboard-card">
-                <h2>Quick Actions</h2>
-                <div class="quick-actions">
-                    <button onclick="window.location.href='events.html'" class="action-btn">Browse Events</button>
-                    <a href="user-preferences.html" class="action-btn">Update Preferences</a>
-                    <button onclick="logout()" class="action-btn logout">Logout</button>
+            <div class="dashboard-sidebar">
+                <!-- Preferences Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-heart"></i> My Interests</h2>
+                    </div>
+                    <div id="userPreferences" class="preferences-list">
+                        <!-- Preferences will be loaded here -->
+                    </div>
                 </div>
-            </div>
-        </div>
-         <!-- New RSVPed Events Table Section -->
-         <div class="rsvped-events-section">
-            <h2>My RSVPed Events</h2>
-            <div id="rsvpedEventsTable">
-                <!-- Table will be loaded here -->
+
+                <!-- Quick Actions Card -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-bolt"></i> Quick Actions</h2>
+                    </div>
+                    <div class="quick-actions">
+                        <button onclick="window.location.href='events.html'" class="action-btn">
+                            <i class="fas fa-search"></i> Browse Events
+                        </button>
+                        <button onclick="window.location.href='user-preferences.html'" class="action-btn">
+                            <i class="fas fa-cog"></i> Update Preferences
+                        </button>
+                        <button onclick="window.location.href='calendar.html'" class="action-btn">
+                            <i class="fas fa-calendar"></i> View Calendar
+                        </button>
+                        <button onclick="logout()" class="action-btn logout-btn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <footer class="footer">
-        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+        <p>&copy; 2024 CamaraEvents. All Rights Reserved.</p>
     </footer>
 
-    <script src="js/dashboard.js"></script>
     <script src="js/shared.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html> 

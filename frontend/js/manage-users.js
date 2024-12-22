@@ -24,7 +24,7 @@ async function loadUsers(page = 1) {
         const searchTerm = document.getElementById('searchUsers').value;
         const filter = document.getElementById('filterUsers').value;
 
-        const response = await fetch(`https://eventicity-backend.onrender.com/api/admin/users?page=${page}&search=${searchTerm}&filter=${filter}`, {
+        const response = await fetch(`${API_BASE_URL}/admin/users?page=${page}&search=${searchTerm}&filter=${filter}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -71,7 +71,7 @@ function displayUsers(users) {
 async function viewUser(userId) {
     try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`https://eventicity-backend.onrender.com/api/admin/users/${userId}`, {
+        const response = await fetch(`${API_BASE_URL}/admin/users/${userId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

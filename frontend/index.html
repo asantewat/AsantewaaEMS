@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventicity - Campus Event Hub</title>
+    <title>CamaraEvents - Campus Event Hub</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#" class="navbar-logo">Eventicity</a>
+            <a href="#" class="navbar-logo">CamaraEvents</a>
             <ul class="navbar-links">
                 <li><a href="index.html" class="active-link">Home</a></li>
                 <li><a href="register.html">Register</a></li>
@@ -19,21 +20,43 @@
         </div>
     </nav>
 
-    <!-- Hero Section with Parallax -->
     <section class="hero">
-        <div class="parallax-bg"></div>
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Welcome to Eventicity</h1>
-            <p>Your one-stop platform for university events</p>
-            <button class="cta-button" onclick="checkAuthAndExplore()">Explore Events</button>
+            <h1>Welcome to CamaraEvents</h1>
+            <p>Your one-stop solution for managing and discovering amazing events. Whether you're organizing a workshop, meetup, or social gathering, we've got you covered.</p>
+            <a href="register.html" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-calendar-plus"></i>
+                <h3>Easy Event Creation</h3>
+                <p>Create and manage events with just a few clicks. Add details, set capacity, and track RSVPs effortlessly.</p>
+            </div>
+            
+            <div class="feature-card">
+                <i class="fas fa-users"></i>
+                <h3>RSVP Management</h3>
+                <p>Keep track of attendees, manage capacity, and send updates to registered participants.</p>
+            </div>
+            
+           
+            
+            <div class="feature-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Friendly</h3>
+                <p>Access your events on any device. Our platform is fully responsive and easy to use on the go.</p>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Eventicity. All Rights Reserved.</p>
+        <p>&copy; 2024 CamaraEvents. All Rights Reserved.</p>
     </footer>
 
+    <script src="js/shared.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@ document.getElementById('preferencesForm').addEventListener('submit', async (e) 
     const preferences = Array.from(checkboxes).map(cb => cb.value);
 
     try {
-        const response = await fetch('https://eventicity-backend.onrender.com/api/users/preferences', {
+        const response = await fetch(`${API_BASE_URL}/users/preferences`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -65,19 +65,10 @@ function handleEventCreation(e) {
     alert('Event created successfully!');
 }
 
-function loadExistingEvents() {
+async function loadExistingEvents() {
     // TODO: Fetch from backend
-    const sampleEvents = [
-        {
-            id: 1,
-            name: "Tech Workshop",
-            date: "2024-03-15",
-            location: "Main Hall",
-            capacity: 50,
-            rsvps: 23
-        },
-        // Add more sample events as needed
-    ];
+    const response = await fetch(`${API_BASE_URL}/admin/events`);
+    const sampleEvents = await response.json();
     
     const tableBody = document.getElementById('eventsTableBody');
     if (tableBody) {

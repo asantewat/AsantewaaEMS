@@ -1,3 +1,6 @@
+// At the top of the file
+const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:5000/api';
+
 // Common functionality across pages
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize any common elements
@@ -80,7 +83,7 @@ async function handleRegistration(event) {
     };
 
     try {
-        const response = await fetch('http://localhost:5000/api/users/register', {
+        const response = await fetch(`${API_BASE_URL}/users/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

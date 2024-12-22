@@ -13,82 +13,90 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px; /* Account for navbar and add horizontal padding */
+    padding: 80px 20px;
 }
 
+/* Login container */
 .login-container {
-    background-color: #333;
+    background-color: white;
+    border: 2px solid #FFB6C1;  /* Light pink border */
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
 }
 
 .login-container h1 {
+    color: #FF69B4;  /* Hot pink */
     text-align: center;
-    color: #ffcc00;
-    margin-bottom: 25px;
-    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
+/* Form styles */
 .form-group {
     margin-bottom: 20px;
 }
 
 .form-group label {
     display: block;
-    color: white;
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
 }
 
 .form-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #555;
+    padding: 10px;
+    border: 1px solid #FFB6C1;  /* Light pink border */
     border-radius: 5px;
-    background: #444;
-    color: white;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
+.form-group input:focus {
+    outline: none;
+    border-color: #FF69B4;  /* Hot pink when focused */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 0.2);  /* Hot pink shadow */
+}
+
+/* Login button */
 .login-button {
+    background-color: #FF69B4;  /* Hot pink */
+    color: white;
     width: 100%;
     padding: 12px;
-    background: #ffcc00;
-    color: #333;
     border: none;
     border-radius: 5px;
-    font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .login-button:hover {
-    background: white;
+    background-color: #FF1493;  /* Deep pink on hover */
 }
 
+/* Sign up link */
 .signup-link {
     text-align: center;
     margin-top: 20px;
-    color: white;
 }
 
 .signup-link a {
-    color: #ffcc00;
+    color: #FF69B4;  /* Hot pink */
     text-decoration: none;
     font-weight: bold;
 }
 
 .signup-link a:hover {
+    color: #FF1493;  /* Deep pink on hover */
     text-decoration: underline;
 }
 
 /* Footer positioning */
 .footer {
     margin-top: auto;
+    background-color: #FF69B4;  /* Hot pink */
+    color: white;
 }
 

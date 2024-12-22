@@ -1,3 +1,12 @@
+/* Update color variables at the top */
+:root {
+    --primary-color: #FF69B4;  /* Hot pink */
+    --secondary-color: #FFB6C1;  /* Light pink */
+    --text-color: #333;
+    --background-color: #fff;
+    --hover-color: #FF1493;  /* Deep pink */
+}
+
 /* General Reset */
 * {
     margin: 0;
@@ -12,6 +21,8 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     min-height: 100vh;
+    background-color: white;
+    color: #333;
 }
 
 main {
@@ -20,12 +31,13 @@ main {
 
 /* Navbar */
 .navbar {
-    background-color: #333;
+    background-color: #FF69B4;
     padding: 10px 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    color: white;
 }
 
 .navbar-container {
@@ -37,7 +49,7 @@ main {
 }
 
 .navbar-logo {
-    color: #ffcc00;
+    color: white;
     font-size: 2rem;
     text-decoration: none;
     font-weight: bold;
@@ -60,101 +72,93 @@ main {
 }
 
 .navbar-links a:hover {
-    color: #ffcc00;
+    color: white;
+    background-color: #FF1493;
 }
 
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
-    color: white;
+    min-height: 80vh;
+    color: #333;  /* Changed to dark text */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    overflow: hidden;
-}
-
-.hero .parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../pexels-pavel-danilyuk-6405771.jpg') no-repeat center center;
-    background-size: cover;
-    z-index: -2;
-    /* animation: parallax-scroll 20s linear infinite; */
-}
-
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.4);  /* Semi-transparent black overlay */
-    z-index: -1;
-}
-
-@keyframes parallax-scroll {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-10%);
-    }
+    background: white;
+    padding: 40px 20px;
 }
 
 .hero-content {
-    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero-content h1 {
     font-size: 3rem;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #FF69B4;  /* Hot pink */
 }
 
 .hero-content p {
     font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Add new sections */
+.features-section {
+    padding: 60px 20px;
+    background: white;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    padding: 30px;
+    border: 2px solid #FFB6C1;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
-.hero-content .cta-button {
-    background-color: #ffcc00;
+.feature-card h3 {
+    color: #FF69B4;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.feature-card p {
     color: #333;
-    padding: 15px 30px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-    border: none;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
 }
-
-.hero-content .cta-button:hover {
-    background-color: #ffd633;
-    transform: translateY(-2px);
-}
-
 
 /* Footer Section */
 .footer {
-    background-color: #333; /* Matches the navbar and hero section background */
-    color: white; /* Provides good contrast */
+    background-color: #FF69B4;
+    color: white;
     text-align: center;
-    padding: 20px 0; /* Adds space around the text */
-    font-size: 0.9rem; /* Sets a smaller font size for the footer text */
+    padding: 20px 0;
+    font-size: 0.9rem;
     margin-bottom: 0px;
     margin-top: auto;
 }
 
 .footer p {
-    margin: 0; /* Removes default margin */
-    line-height: 1.5; /* Improves readability */
+    margin: 0;
+    line-height: 1.5;
 }
 
 
@@ -166,14 +170,14 @@ main {
     max-width: 600px;
     margin: 100px auto 50px;
     padding: 20px;
-    background: #333; /* Dark background */
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .register-container h1 {
     text-align: center;
-    color: #ffcc00; /* Yellow headings */
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
@@ -185,29 +189,29 @@ main {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: white; /* White text for labels */
+    color: #333;
 }
 
 .form-group input,
 .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #555; /* Subtle border for input fields */
+    border: 1px solid #FFB6C1;
     border-radius: 5px;
     font-size: 1rem;
-    background: #444; /* Darker input background */
-    color: white; /* White text for inputs */
+    background: white;
+    color: #333;
 }
 
 .form-group input::placeholder {
-    color: #bbb; /* Light gray placeholder */
+    color: #666;
 }
 
 .register-button {
     display: block;
     width: 100%;
-    background: #ffcc00; /* Yellow button */
-    color: #333; /* Dark text for contrast */
+    background: #FF69B4;
+    color: white;
     padding: 10px;
     font-weight: bold;
     border: none;
@@ -218,8 +222,8 @@ main {
 }
 
 .register-button:hover {
-    background: white; /* White background on hover */
-    color: #ffcc00; /* Yellow text on hover */
+    background: #FF1493;
+    color: white;
 }
 
 .checkbox-group {
@@ -233,14 +237,14 @@ main {
     display: flex;
     align-items: center;
     font-size: 1rem;
-    color: white; /* White text for checkboxes */
+    color: #333;
 }
 
 .checkbox-group input[type="checkbox"] {
     margin-right: 10px;
     width: 16px;
     height: 16px;
-    accent-color: #ffcc00; /* Matches checkbox accent with theme */
+    accent-color: #FF69B4;
 }
 
 
@@ -251,15 +255,15 @@ main {
     max-width: 400px;
     margin: 100px auto 50px;
     padding: 20px;
-    background: #333; /* Matches the dark theme */
+    background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
+    color: #333;
 }
 
 .login-container h1 {
     text-align: center;
-    color: #ffcc00; /* Yellow for consistency */
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
@@ -285,8 +289,8 @@ main {
 .login-button {
     display: block;
     width: 100%;
-    background: #ffcc00;
-    color: #333;
+    background: #FF69B4;
+    color: white;
     padding: 10px;
     font-weight: bold;
     border: none;
@@ -297,18 +301,18 @@ main {
 }
 
 .login-button:hover {
-    background: #333;
-    color: #ffcc00;
+    background: #FF1493;
+    color: white;
 }
 
 .signup-link {
     text-align: center;
     margin-top: 10px;
-    color: white;
+    color: #333;
 }
 
 .signup-link a {
-    color: #ffcc00;
+    color: #FF69B4;
     text-decoration: none;
     font-weight: bold;
 }
@@ -325,12 +329,12 @@ main {
 .events-listing {
     padding: 100px 20px 20px;
     min-height: calc(100vh - 60px);
-    background-color: #fff;
-    color: white;
+    background-color: white;
+    color: #333;
 }
 
 .events-listing h1 {
-    color: #ffcc00;
+    color: #FF69B4;
     margin-bottom: 40px;
     text-align: center;
     font-size: 2.5rem;
@@ -346,11 +350,12 @@ main {
 }
 
 .event-card {
-    background: #fff;
+    background: white;
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-color: #FFB6C1;
 }
 
 .event-title {
@@ -360,7 +365,7 @@ main {
 }
 
 .event-date {
-    background: #ffcc00;
+    background: #FFB6C1;
     color: #333;
     padding: 10px;
     border-radius: 8px;
@@ -384,7 +389,7 @@ main {
 }
 
 .tag {
-    background: #ffcc00;
+    background: #FFB6C1;
     color: #333;
     padding: 5px 15px;
     border-radius: 15px;
@@ -393,7 +398,7 @@ main {
 }
 
 .rsvp-button {
-    background: #28a745;
+    background: #FF69B4;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -403,7 +408,7 @@ main {
 }
 
 .rsvp-button:hover {
-    background: #218838;
+    background: #FF1493;
 }
 
 /* Responsive adjustments */
@@ -426,7 +431,7 @@ main {
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    background: #fff;
+    background: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -445,7 +450,7 @@ main {
 }
 
 .calendar-navigation button {
-    background: #ffcc00;
+    background: #FF69B4;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
@@ -454,7 +459,7 @@ main {
 }
 
 .calendar-navigation button:hover {
-    background: #ffd633;
+    background: #FF1493;
 }
 
 .calendar {
@@ -463,8 +468,8 @@ main {
 }
 
 .calendar th {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 10px;
     text-align: center;
 }
@@ -480,7 +485,7 @@ main {
 }
 
 .calendar td:hover {
-    background: #f8f8f8;
+    background: #FFB6C1;
 }
 
 .event-marker {
@@ -491,6 +496,7 @@ main {
     bottom: 5px;
     left: 50%;
     transform: translateX(-50%);
+    background: #FF69B4;
 }
 
 .filter-section {
@@ -502,7 +508,7 @@ main {
 #categoryFilter {
     padding: 8px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFB6C1;
 }
 
 .event-modal {
@@ -511,7 +517,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 105, 180, 0.2);  /* Semi-transparent pink */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -519,20 +525,92 @@ main {
 }
 
 .modal-content {
-    background: #fff;
+    position: relative;
+    background: white !important;  /* Force white background */
     padding: 20px;
     border-radius: 10px;
     max-width: 500px;
     width: 90%;
+    border: 2px solid #FFB6C1;
+    box-shadow: 0 4px 8px rgba(255, 105, 180, 0.2);
+    color: #333 !important;  /* Force dark text */
 }
 
-.modal-content button {
-    background: #ffcc00;
+/* Modal Title */
+.modal-content h1,
+.modal-content h2,
+.modal-content h3 {
+    color: #FF69B4 !important;  /* Force pink headers */
+    margin-bottom: 15px;
+}
+
+/* Event Title specifically */
+.modal-content .event-title {
+    color: #FF69B4 !important;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Close button */
+.modal-close,
+.close-btn {
+    background: #FF69B4 !important;
+    color: white !important;
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover,
+.close-btn:hover {
+    background: #FF1493 !important;
+    transform: translateY(-2px);
+}
+
+/* Event details */
+.modal-content p,
+.modal-content span,
+.modal-content div {
+    color: #333 !important;  /* Force dark text for all content */
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #FF69B4;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 5px;
+}
+
+.modal-close:hover {
+    color: #FF1493;
+}
+
+/* Additional modal content styles */
+.modal-content .event-details {
+    color: #333;
+}
+
+.modal-content .event-time,
+.modal-content .event-location,
+.modal-content .event-description {
+    color: #333;
+    margin: 10px 0;
+}
+
+.modal-content .event-tag {
+    background: #FFB6C1;
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 5px;
 }
 
 /* Admin Dashboard Styles */
@@ -540,21 +618,21 @@ main {
     max-width: 800px;
     margin: 100px auto 50px;
     padding: 20px;
-    background: #333;
+    background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    color: white;
+    color: #333;
 }
 
 .admin-container h1 {
-    color: #ffcc00;
+    color: #FF69B4;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .admin-button {
-    background: #ffcc00;
-    color: #333;
+    background: #FF69B4;
+    color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -565,17 +643,17 @@ main {
 }
 
 .admin-button:hover {
-    background: white;
-    color: #333;
+    background: #FF1493;
+    color: white;
 }
 
 #eventDescription {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background: #444;
-    color: white;
-    border: 1px solid #555;
+    background: white;
+    color:  #FF69B4;
+    border: 1px solid #FFB6C1;
 }
 
 /* Add after your existing styles */
@@ -588,7 +666,7 @@ main {
 }
 
 .admin-main h1 {
-    color: #ffcc00;
+    color: #FF69B4;
     margin-bottom: 30px;
     text-align: center;
 }
@@ -602,7 +680,7 @@ main {
 }
 
 .stat-card {
-    background: #333;
+    background: #FF69B4;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -611,7 +689,7 @@ main {
 }
 
 .stat-card h3 {
-    color: #ffcc00;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -622,14 +700,15 @@ main {
 
 /* Quick Actions */
 .quick-actions {
-    background: #333;
+    background: white;
     padding: 25px;
     border-radius: 10px;
     margin-top: 30px;
+    border: 1px solid #FFB6C1;
 }
 
 .quick-actions h2 {
-    color: #ffcc00;
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
@@ -642,7 +721,7 @@ main {
 /* Admin Tabs */
 .admin-tabs {
     margin-bottom: 30px;
-    border-bottom: 2px solid #444;
+    border-bottom: 2px solid #FFB6C1;
 }
 
 .tab-button {
@@ -650,14 +729,14 @@ main {
     border: none;
     padding: 15px 30px;
     font-size: 1.1rem;
-    color: #fff;
+    color: #333;
     cursor: pointer;
     margin-right: 10px;
     position: relative;
 }
 
 .tab-button.active {
-    color: #ffcc00;
+    color: #FF69B4;
 }
 
 .tab-button.active::after {
@@ -667,15 +746,16 @@ main {
     left: 0;
     width: 100%;
     height: 2px;
-    background: #ffcc00;
+    background: #FF69B4;
 }
 
 /* Tab Content */
 .tab-content {
     display: none;
-    background: #333;
+    background: white;
     padding: 30px;
     border-radius: 10px;
+    border: 1px solid #FFB6C1;
 }
 
 .tab-content.active {
@@ -702,14 +782,14 @@ main {
 .events-table {
     width: 100%;
     border-collapse: collapse;
-    background: #ffcc00;
+    background: white;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .events-table th {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 12px;
     text-align: left;
 }
@@ -725,15 +805,15 @@ main {
 }
 
 .events-table .event-type {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.9em;
 }
 
 .cancel-rsvp {
-    background: #dc3545;
+    background: #FF1493;
     color: white;
     border: none;
     padding: 6px 12px;
@@ -743,11 +823,11 @@ main {
 }
 
 .cancel-rsvp:hover {
-    background: #c82333;
+    background: #FF69B4;
 }
 
 .no-events {
-    color: #ffcc00;
+    color: #FF69B4;
     text-align: center;
     padding: 20px;
     font-style: italic;
@@ -766,12 +846,12 @@ main {
 }
 
 .edit-button {
-    background: #ffcc00;
-    color: #333;
+    background: #FF69B4;
+    color: white;
 }
 
 .delete-button {
-    background: #ff4444;
+    background: #FF1493;
     color: white;
 }
 
@@ -818,7 +898,7 @@ main {
 /* Add to your existing styles */
 .signup-prompt {
     margin-top: 30px;
-    color: #fff;
+    color: #333;
     font-size: 1.1em;
 }
 
@@ -826,8 +906,8 @@ main {
     display: inline-block;
     padding: 12px 30px;
     background-color: transparent;
-    border: 2px solid #ffcc00;
-    color: #ffcc00;
+    border: 2px solid #FF69B4;
+    color: #FF69B4;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -836,8 +916,8 @@ main {
 }
 
 .register-btn:hover {
-    background-color: #ffcc00;
-    color: #333;
+    background-color: #FF69B4;
+    color: white;
     transform: translateY(-2px);
 }
 
@@ -848,18 +928,18 @@ main {
     max-width: 600px;
     margin: 40px auto;
     padding: 20px;
-    background: #333; /* Changed from white to dark */
+    background: white;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .preferences-container h1 {
-    color: #fff; /* Changed from #333 to white */
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
 .preferences-container p {
-    color: #fff; /* Added white color for description text */
+    color: #333;
     margin-bottom: 20px;
 }
 
@@ -873,15 +953,16 @@ main {
     display: flex;
     align-items: center;
     padding: 15px;
-    background: #ffcc00; /* Changed to yellow */
-    color: #333; /* Dark text */
+    background: #FFB6C1;
+    color: #333;
     border-radius: 8px;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
 }
 
 .preference-item:hover {
-    background: #ffd633; /* Lighter yellow on hover */
+    background: #FF69B4;
+    color: white;
 }
 
 .preference-item input[type="checkbox"] {
@@ -896,19 +977,19 @@ main {
     align-items: center;
     gap: 10px;
     font-size: 1.1em;
-    color: #333; /* Dark text */
+    color: #333;
     cursor: pointer;
     font-weight: bold;
 }
 
 .preference-item i {
-    color: #333; /* Changed to dark */
+    color: #333;
     font-size: 1.2em;
 }
 
 .save-btn {
-    background: #ffcc00;
-    color: #333;
+    background: #FF69B4;
+    color: white;
     border: none;
     padding: 15px;
     border-radius: 8px;
@@ -919,33 +1000,34 @@ main {
 }
 
 .save-btn:hover {
-    background: #ffd633;
+    background: #FF1493;
     transform: translateY(-2px);
 }
 
 .rsvped-events-section {
     margin-top: 40px;
     padding: 20px;
-    background: #333;
+    background: white;
     border-radius: 10px;
+    border: 1px solid #FFB6C1;
 }
 
 .rsvped-events-section h2 {
-    color: #ffcc00;
+    color: #FF69B4;
     margin-bottom: 20px;
 }
 
 .events-table {
     width: 100%;
     border-collapse: collapse;
-    background: #fff;
+    background: white;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .events-table th {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 12px;
     text-align: left;
 }
@@ -956,12 +1038,34 @@ main {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.events-table tr:hover {
-    background: #f5f5f5;
+.events-table tr:last-child td {
+    border-bottom: none;
+}
+
+.events-table .event-type {
+    background: #FF69B4;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.cancel-rsvp {
+    background: #FF1493;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cancel-rsvp:hover {
+    background: #FF69B4;
 }
 
 .no-events {
-    color: #ffcc00;
+    color: #FF69B4;
     text-align: center;
     padding: 20px;
     font-style: italic;
@@ -971,14 +1075,14 @@ main {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background: #fff;
+    background: white;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .rsvp-table th {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 12px;
     text-align: left;
 }
@@ -997,13 +1101,13 @@ main {
 }
 
 .view-rsvps-btn {
-    background: #ffcc00;
-    color: #333;
+    background: #FF69B4;
+    color: white;
 }
 
 .cancel-all-btn {
-    background: #dc3545;
-    color: #fff;
+    background: #FF1493;
+    color: white;
 }
 
 .modal {
@@ -1020,7 +1124,8 @@ main {
 }
 
 .modal-content {
-    background-color: #fff; /* Changed to white background */
+    background-color: white;
+    border-color: #FFB6C1;
     padding: 30px;
     border-radius: 8px;
     min-width: 400px;
@@ -1031,9 +1136,24 @@ main {
 }
 
 .modal h2 {
-    color: #333;
+    color: #FF69B4;
     margin-bottom: 20px;
     font-size: 1.5em;
+}
+
+.close-button {
+    background-color: #FF1493;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background: #444;
 }
 
 .rsvp-users-table {
@@ -1043,8 +1163,8 @@ main {
 }
 
 .rsvp-users-table th {
-    background: #333;
-    color: #ffcc00;
+    background: #FF69B4;
+    color: white;
     padding: 12px 15px;
     text-align: left;
 }
@@ -1056,8 +1176,8 @@ main {
 }
 
 .cancel-rsvp-btn {
-    background: #dc3545;
-    color: #fff;
+    background: #FF1493;
+    color: white;
     border: none;
     padding: 6px 12px;
     border-radius: 4px;
@@ -1066,25 +1186,35 @@ main {
 }
 
 .cancel-rsvp-btn:hover {
-    background: #c82333;
-}
-
-.close-btn {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.close-btn:hover {
-    background: #444;
+    background: #FF69B4;
 }
 
 .action-btn {
     text-decoration: none;
     /* Keep your existing action-btn styles */
+}
+
+/* Update buttons */
+.cta-button, .action-btn, .login-button, .register-button {
+    background-color: #FF69B4;
+    color: white;
+}
+
+.cta-button:hover, .action-btn:hover, .login-button:hover, .register-button:hover {
+    background-color: #FF1493;
+}
+
+/* Update cards and containers */
+.dashboard-card, .event-card, .login-container, .register-container {
+    background-color: white;
+    border: 1px solid #FFB6C1;
+}
+
+/* Update links */
+a {
+    color: #FF69B4;
+}
+
+a:hover {
+    color: #FF1493;
 }

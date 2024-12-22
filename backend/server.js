@@ -6,15 +6,9 @@ const connectDB = require('./config/db');
 
 const app = express();
 
-// Connect to the database
-connectDB();
-
 // Middleware
 app.use(cors({
-    origin: [
-        'https://eventicity-frontend.onrender.com', // Add your frontend Render URL
-        'https://eventicity-backend.onrender.com'  // Backend Render URL
-    ],
+    origin: '*',
     credentials: true
 }));
 app.use(express.json());
@@ -29,17 +23,16 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend')); // Ensure your built frontend is in the 'frontend' directory
 }
 
-// MongoDB Connection
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
-    .then(() => {
-        console.log('Connected to MongoDB');
-        console.log('Database name:', mongoose.connection.db.databaseName);
-    })
-    .catch(err => console.error('MongoDB connection error:', err));
-
 // Port configuration
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+
+// Connect to MongoDB - Remove duplicate connection
+connectDB()
+    .then(() => {
+        console.log('Connected to MongoDB');
+    })
+    .catch(err => {
+        console.error('MongoDB connection error:', err);
+        process.exit(1);
+    });
