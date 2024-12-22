@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Load user preferences
     try {
-        const response = await fetch('https://eventicity-backend.onrender.com/api/users/me', {
+        const response = await fetch(`${API_BASE_URL}/users/me`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
